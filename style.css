@@ -1,0 +1,484 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+	
+}
+
+.h2{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	margin: 2%;
+}
+
+/*efecto explocion de color hover---------------------------------------------------------------------------*/
+
+.contenedor1{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.top{
+	width: 200px;
+	height: 200px;
+	margin-left: 20px;
+	transition-duration: 2s;
+	transition-timing-function: ease-in-out;
+}
+
+.right{
+	background-color: #FEFFBF;
+	clip-path: circle(10% at top right);
+}
+
+.right:hover{
+	clip-path: circle(150% at top right);
+}
+
+.left{
+	background-color: #F498C2;
+	clip-path: circle(10% at bottom left);
+}
+
+.left:hover{
+	clip-path: circle(150% at bottom left);
+}
+
+.center{
+	background-color: #B0EFEF;
+	clip-path: circle(10% at top center);
+}
+
+.center:hover{
+	clip-path: circle(150% at top center);
+}
+
+
+/*efecto explocion de color con click, ver el archivo javascript----------------------------------------------*/
+.contenedor2{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.contenedor2 > div{
+	width: 200px;
+	height: 200px;
+	margin-left: 20px;
+}
+
+.uno, .dos, .tres{
+	background-color: black;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+}
+
+.botones{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+/*primer efecto--------------------------------------------------------*/
+.top_right{
+	background-color: inherit;
+}
+
+.animacion1{
+	animation-timing-function: easy-in-out;
+	animation-name: desplazar1;
+	animation-duration: 2s;
+	background-color: #FEFFBF;
+}
+@keyframes desplazar1{
+	from{
+		clip-path: circle(7% at top right);
+	}
+	to{
+		clip-path: circle(150% at top right);
+	}
+}
+
+.uno{
+	background-color: #FEFFBF;
+	margin-right:15%;
+}
+/*segundo efecto ------------------------------------------------------*/
+.bottom_left{
+	background-color:inherit;
+}
+.animacion2{
+	background-color: #F498C2;
+	animation-timing-function: easy-in-out;
+	animation-name: desplazar2;
+	animation-duration: 2s;
+}
+@keyframes desplazar2{
+	from{
+		clip-path: circle(7% at bottom left);
+	}
+	to{
+		clip-path: circle(150% at bottom left);
+	}
+}
+
+.dos{
+	background-color: #F498C2;
+}
+/*tercer efecto--------------------------------------*/
+.top_center{
+	background-color:inherit;
+}
+
+.animacion3{
+	animation-timing-function: easy-in-out;
+	animation-name: desplazar3;
+	animation-duration: 2s;
+	background-color: #B0EFEF;
+}
+
+@keyframes desplazar3{
+	from{
+		clip-path: circle(7% at top center);
+	}
+	to{
+		clip-path: circle(150% at top center);
+	}
+}
+
+.tres{
+	margin-left: 15%;
+	background-color: #B0EFEF;
+}
+
+/*tarjeta giratoria -------------------------------*/
+#card_contenedor{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.card_giratoria{
+	height: 300px;
+	width: 200px;
+	position: relative;
+}
+.front{
+	backface-visibility: hidden;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	background-color:#B0EFFF ;
+	transform: perspective(500px) rotateY(0deg);
+	transition-duration: 1s;
+}
+
+.back{
+	backface-visibility: hidden;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	transform: perspective(500px) rotateY(180deg);
+	background-color: #F498F2;
+	transition-duration: 1s;
+
+}
+
+.card_giratoria:hover .front{
+	transform: perspective(500px) rotateY(180deg);
+}
+
+.card_giratoria:hover .back{
+	transform: perspective(500px) rotateY(360deg);
+}
+
+/*botones ----------------------------------------------------------------------------------------*/
+
+
+:root {
+  --body-bg-color: #1a1c1d;
+  --text-color: #aaaebc;
+  --hr-color: #26292a;
+  --red: #e74c3c;
+  --transition-duration: 0.3s;
+  --transition-delay: 0.2s;
+  --red: #e74c3c;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.botones22{
+  margin: 30px 0;
+  font: 22px sans-serif;
+  background: var(--body-bg-color);
+  color: var(--text-color);
+}
+
+hr {
+  border-color: var(--hr-color);
+  margin: 20px 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  margin-right: 70px;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.menu a span {
+  transition: transform 0.2s ease-out;
+}
+
+.menu a span:first-child {
+  display: inline-block;
+  padding: 10px;
+}
+
+.menu a span:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+}
+
+.menu i {
+  font-size: 30px;
+}
+
+.menu a:hover span:first-child {
+  transform: translateY(100%);
+}
+
+.menu a:hover span:last-child,
+.menu[data-animation] a:hover span:last-child {
+  transform: none;
+}
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.menu[data-animation="to-top"] a span:last-child {
+  transform: translateY(100%);
+}
+
+.menu[data-animation="to-top"] a:hover span:first-child {
+  transform: translateY(-100%);
+}
+
+.menu[data-animation="to-right"] a span:last-child {
+  transform: translateX(-100%);
+}
+
+.menu[data-animation="to-right"] a:hover span:first-child {
+  transform: translateX(100%);
+}
+
+.menu[data-animation="to-left"] a span:last-child {
+  transform: translateX(100%);
+}
+
+.menu[data-animation="to-left"] a:hover span:first-child {
+  transform: translateX(-100%);
+}
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 1rem;
+}
+
+.page-footer span {
+  color: var(--red);
+}
+
+
+
+/*-------------------BOTONES BORDER____________________________________________________-*/
+
+.botones_border{
+ margin: 30px 0;
+  font: 22px sans-serif;
+  background: var(--body-bg-color);
+  color: var(--text-color);
+}
+
+
+.menu2 {
+  display: flex;
+  justify-content: center;
+}
+
+.menu2 li {
+  margin-right: 70px;
+}
+
+.menu2 a {
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+
+.menu2 .border {
+  position: absolute;
+  left: 0;
+  background: currentColor;
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+.menu2 .border-top,
+.menu2 .border-bottom {
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+}
+
+.menu2 .border-left,
+.menu2 .border-right {
+  width: 1px;
+  height: 100%;
+  transform: scaleY(0);
+}
+
+.menu2 .border-top,
+.menu2 .border-left,
+.menu2 .border-right {
+  top: 0;
+}
+
+.menu2 .border-bottom {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+.menu2 .border-top {
+  transform-origin: top left;
+}
+
+.menu2 .border-left {
+  transform-origin: bottom left;
+}
+
+.menu2 .border-right {
+  left: auto;
+  right: 0;
+  transform-origin: top right;
+}
+
+.menu2 a:hover .border-top,
+.menu2 a:hover .border-bottom {
+  transform: scaleX(1);
+}
+
+.menu2 a:hover .border-left,
+.menu2 a:hover .border-right {
+  transform: scaleY(1);
+}
+
+.menu2 a:hover .border-right {
+  transition-delay: var(--transition-delay);
+}
+
+.menu2 a:hover .border-bottom {
+  transition-delay: calc(var(--transition-delay) * 2);
+}
+
+.menu2 a:hover .border-left {
+  transition-delay: calc(var(--transition-delay) * 3);
+}
+
+
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.menu2[data-animation="diagonal"] .border-left {
+  transform-origin: top left;
+}
+
+.menu2[data-animation="diagonal"] .border-right,
+.menu2[data-animation="diagonal"] .border-bottom {
+  transform-origin: bottom right;
+}
+
+.menu2[data-animation="diagonal"] a:hover [class^=border]{
+  transition-delay: 0s;
+}
+
+/* BORDER REDONDO -------------------------------------------------------*/
+
+:root {
+  --body-bg-color: #1a1c1d;
+  --text-color: #aaaebc;
+  --red: #e74c3c;
+}
+
+.menu3 {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.menu3 li {
+  margin-right: 70px;
+}
+
+.menu3 a {
+  position: relative;
+  display: block;
+  padding: 10px;
+  z-index: 8888888;
+}
+
+.menu3 a svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+}
+
+.menu3 a svg path {
+  fill: transparent;
+  stroke-width: 5px;
+  stroke: currentColor;
+  stroke-dasharray: 1210.709716796875;
+  stroke-dashoffset: -1210.709716796875;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.29, 0.68, 0.74, 1.02);
+}
+
+.menu3 a:hover svg path {
+  stroke-dashoffset: 0;
+}
